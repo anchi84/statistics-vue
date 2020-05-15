@@ -17,6 +17,15 @@ const routes = [
     // this generates a separate chunk (statistics.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "statistics" */ '../views/Statistics.vue')
+  },
+  {
+    path: '/404',
+    name: 'NotFound',
+    component: () => import(/* webpackChunkName: "404" */ '@/views/NotFound.vue')
+  },
+  {
+    path: '*',
+    redirect: '/404'
   }
 ]
 
